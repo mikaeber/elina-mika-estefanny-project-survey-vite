@@ -3,13 +3,13 @@ import { SelectQuestion } from "./SelectQuestion";
 import { Submit } from "./Submit";
 import { RadioButtonQuestion } from "./RadioButtonQuestion";
 
-export const Form = () => {
+export const Form = ({ formData, handleSubmit, handleChange }) => {
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <TextInput />
       <RadioButtonQuestion />
-      <SelectQuestion />
-      <Submit />
+      <SelectQuestion value={formData.artist} onChange={handleChange} />
+      <Submit handleSubmit={handleSubmit} />
     </form>
   );
 };

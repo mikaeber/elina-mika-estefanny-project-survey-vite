@@ -1,12 +1,23 @@
-export const SelectQuestion = () => {
+export const SelectQuestion = ({ value, onChange }) => {
   return (
     <>
       <h2>Dropdown</h2>
-      <select name="cars" id="cars" form="carform">
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="opel">Opel</option>
-        <option value="audi">Audi</option>
+      <select
+        name="artist"
+        id="artist"
+        form="artistform"
+        // onChange={(event) => setArtist(event.target.value)}
+        onChange={onChange}
+        value={value}
+        required
+      >
+        <option value="" selected disabled hidden>
+          Please select
+        </option>
+        <option value="Madonna">Madonna</option>
+        <option value="Billie Eilish">Billie Eilish</option>
+        <option value="Cher">Cher</option>
+        <option value="Charlie XCX">Charlie XCX</option>
       </select>
     </>
   );
