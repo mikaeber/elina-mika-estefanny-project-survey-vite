@@ -7,8 +7,8 @@ export const App = () => {
   // state to store all the answers to the questions in one state object, currently only artist (dropdown-select-question) but can be expanded to include other questions
   const [formData, setFormData] = useState({
     artist: "",
+    textInput: "",
     // TODO radio-button-question
-    // TODO text-input-question
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -33,7 +33,7 @@ export const App = () => {
       <Header />
       {/* if form is submitted (submitted === true), then render the Results, otherwise show the form  */}
       {submitted ? (
-        <Results artist={formData.artist} />
+        <Results artist={formData.artist} textInput={formData.textInput}/>
       ) : (
         <Form
           // setArtist={setArtist}
