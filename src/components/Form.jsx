@@ -7,7 +7,7 @@ export const Form = ({ formData, handleSubmit, handleChange }) => {
   return (
     <form onSubmit={handleSubmit}>
       <TextInput />
-      <RadioButtonQuestion />
+      <RadioButtonQuestion formData={formData} handleChange={handleChange} />
       <SelectQuestion value={formData.artist} onChange={handleChange} />
       <Submit handleSubmit={handleSubmit} />
     </form>
