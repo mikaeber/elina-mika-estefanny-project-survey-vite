@@ -1,3 +1,7 @@
 export const Header = () => {
-  return <h1>What's your music preferences?</h1>;
+  return (
+    <header className="header">
+      <h1>What's your music preferences?</h1>
+    </header>
+  );
 };

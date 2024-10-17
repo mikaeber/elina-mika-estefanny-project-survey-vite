@@ -1,21 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 body {
-  background-color: #23412;
+  background-color: #ffffff; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
+h2, h3 {
+  font-weight: 400; /* Use a valid font-weight */
+  text-align: center;
+}
+
+p, input, button {
+  font-weight: 300; 
+}
+
+/* Header */
 .header {
+  text-align: center;
+  padding: 20px 100px;
+  background-color: #0018a5; 
+  color: white;
+  font-size: 24px;
+  font-weight: 600; /* Correct font-weight usage */
+  margin: 0;
 }
 
+.header h1 {
+  padding-top: 100px;
+}
+
+/* Form */
 .form {
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .results {
+  text-align: center;
+  margin-top: 20px;
 }
 
-.fav-instrument {
+/* Common form input styles */
+input, select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #3b82f6;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  cursor: pointer;
 }
 
-.fav-genre {
+input:focus, select:focus {
+  border-color: #0018a5;
+  outline: none;
+  box-shadow: 0 0 5px rgba(30, 64, 175, 0.5);
 }
 
-.fav-artist {
+/* Favorite Instrument */
+.fav-instrument h2 {
+  font-size: 1.25rem;
+  color: #0018a5;
+  margin-bottom: 10px;
+}
+
+.fav-instrument .radio-group {
+  display: flex;
+  gap: 10px;
+}
+
+.fav-instrument .radio-button {
+  padding: 10px;
+  background-color: #f1f5f9;
+  border: 1px solid #3b82f6;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.fav-instrument .radio-button.checked {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.fav-instrument .radio-button .checkmark {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid white;
+  visibility: hidden;
+}
+
+.fav-instrument .radio-button.checked .checkmark {
+  visibility: visible;
+}
+
+/* Favorite Genre */
+.fav-genre h2 {
+  font-size: 1.25rem;
+  color: #0018a5;
+  margin-bottom: 10px;
+}
+
+/* Favorite Artist */
+.fav-artist h2 {
+  font-size: 1.25rem;
+  color: #0018a5;
+  margin-bottom: 10px;
+}
+
+/* Submit Button */
+.submit-button {
+  width: 80%;
+  padding: 15px;
+  font-size: 18px;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 auto;
+  display: block; /* Ensure centering */
+}
+
+.submit-button:hover {
+  background-color: #0018a5;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .fav-instrument .radio-group {
+    flex-direction: column;
+  }
+
+  .fav-instrument .radio-button {
+    width: 100%;
+  }
+
+  .header {
+    padding: 20px 30px; /* Reduce padding on smaller screens */
+  }
 }
