@@ -1,8 +1,9 @@
-export const Results = ({ artist, textInput }) => {
+export const Results = ({ artist, fav_genre, fav_instrument }) => {
   return (
-  <div>
-    <p>Your favorite artist is {artist}</p>
-    <p>Your answer is: {textInput}</p>
-  </div>
-  )
+    <div>
+      <p>
+        Your seem to like {artist}, {fav_genre} and {fav_instrument}
+      </p>
+    </div>
+  );
 };

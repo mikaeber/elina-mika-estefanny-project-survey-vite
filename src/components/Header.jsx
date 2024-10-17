@@ -1,5 +1,3 @@
 export const Header = () => {
-    return (
-      <h1>Hej</h1>
-    );
-  };
+  return <h1>What's your music preferences?</h1>;
+};

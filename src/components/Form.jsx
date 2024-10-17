@@ -1,17 +1,27 @@
-import { TextInput } from "./TextInput";
-import { SelectQuestion } from "./SelectQuestion";
+import { FavoriteGenre } from "./FavoriteGenre";
+import { FavoriteArtist } from "./FavoriteArtist";
 import { Submit } from "./Submit";
-import { RadioButtonQuestion } from "./RadioButtonQuestion";
+import { FavoriteInstrument } from "./FavoriteInstrument";
 
 export const Form = ({ formData, handleSubmit, handleChange }) => {
   return (
     <form onSubmit={handleSubmit}>
-      <RadioButtonQuestion formData={formData} handleChange={handleChange} />
-      <TextInput 
-      name="textInput"
-      value={formData.textInput}
-      handleChange={handleChange}/>
-      <SelectQuestion value={formData.artist} onChange={handleChange} />
+      <FavoriteInstrument
+        formData={formData}
+        handleChange={handleChange}
+        className="fav-instrument"
+      />
+      <FavoriteGenre
+        name="fav_genre"
+        value={formData.fav_genre}
+        handleChange={handleChange}
+        className="fav-genre"
+      />
+      <FavoriteArtist
+        value={formData.artist}
+        onChange={handleChange}
+        className="fav-artist"
+      />
       <Submit handleSubmit={handleSubmit} />
     </form>
   );

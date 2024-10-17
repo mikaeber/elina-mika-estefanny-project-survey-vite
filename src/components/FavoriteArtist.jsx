@@ -1,7 +1,7 @@
-export const SelectQuestion = ({ value, onChange }) => {
+export const FavoriteArtist = ({ value, onChange }) => {
   return (
     <>
-      <h2>Dropdown</h2>
+      <h2>Favorite Artist</h2>
       <select
         name="artist"
         id="artist"

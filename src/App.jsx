@@ -2,16 +2,17 @@ import { useState } from "react";
 import { Header } from "./components/Header";
 import { Form } from "./components/Form";
 import { Results } from "./components/Results";
-import { RadioButtonQuestion } from "./components/RadioButtonQuestion"; 
+import "./App.css";
 
 export const App = () => {
   // state to store all the answers to the questions in one state object, currently only artist (dropdown-select-question) but can be expanded to include other questions
   const [formData, setFormData] = useState({
     artist: "",
-    fav_language: "",
-    textInput: "",
+    fav_instrument: "",
+    fav_genre: "",
     // TODO radio-button-question
   });
+
   const [submitted, setSubmitted] = useState(false);
 
   // function to save the answers to the questions in formData state when the form is submitted
@@ -31,21 +32,22 @@ export const App = () => {
 
   return (
     <>
-      <Header />
+      <Header className="header" />
       {/* if form is submitted (submitted === true), then render the Results, otherwise show the form  */}
       {submitted ? (
-        <Results artist={formData.artist} fav_language={formData.fav_language} textInput={formData.textInput} />
+        <Results
+          artist={formData.artist}
+          fav_instrument={formData.fav_instrument}
+          fav_genre={formData.fav_genre}
+          className="results"
+        />
       ) : (
         <Form
           formData={formData}
           handleSubmit={handleSubmit}
           handleChange={handleChange}
-        >
-          <RadioButtonQuestion
-            formData={formData}
-            handleChange={handleChange}
+          className="form"
         />
-       </Form> 
       )}
     </>
   );
