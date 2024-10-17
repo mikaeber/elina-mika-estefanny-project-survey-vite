@@ -9,8 +9,8 @@ export const App = () => {
   const [formData, setFormData] = useState({
     artist: "",
     fav_language: "",
+    textInput: "",
     // TODO radio-button-question
-    // TODO text-input-question
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -34,7 +34,7 @@ export const App = () => {
       <Header />
       {/* if form is submitted (submitted === true), then render the Results, otherwise show the form  */}
       {submitted ? (
-        <Results artist={formData.artist} fav_language={formData.fav_language} />
+        <Results artist={formData.artist} fav_language={formData.fav_language} textInput={formData.textInput} />
       ) : (
         <Form
           formData={formData}
