@@ -9,6 +9,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
+  padding-bottom: 100px;
 }
 
 h2, h3 {
@@ -23,25 +24,30 @@ p, input, button {
 /* Header */
 .header {
   text-align: center;
-  padding: 20px 100px;
+  padding: 20px 50px;
   background-color: #0018a5; 
   color: white;
-  font-size: 24px;
-  font-weight: 600; /* Correct font-weight usage */
+  font-size: 22px;
+  font-weight: 500; /* Correct font-weight usage */
   margin: 0;
 }
 
 .header h1 {
-  padding-top: 100px;
+  padding-top: 50px;
+  font-size: 28px;
+  font-weight: 600;
 }
 
 /* Form */
 .form {
-  width: 100%;
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
   background-color: #fff;
-  padding: 20px;
+  padding: 30px 40px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
 }
 
 .results {
@@ -51,20 +57,28 @@ p, input, button {
 
 /* Common form input styles */
 input, select {
-  width: 100%;
-  padding: 10px;
+  padding: 12px;
   font-size: 16px;
-  border: 2px solid #3b82f6;
-  border-radius: 5px;
+  border: 1px solid #3b82f6;
+  border-radius: 4px;
   margin-bottom: 20px;
   background-color: #fff;
   cursor: pointer;
 }
 
+input, select, button {
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
 input:focus, select:focus {
   border-color: #0018a5;
-  outline: none;
   box-shadow: 0 0 5px rgba(30, 64, 175, 0.5);
+  outline: none;
 }
 
 /* Favorite Instrument */
@@ -77,22 +91,26 @@ input:focus, select:focus {
 .fav-instrument .radio-group {
   display: flex;
   gap: 10px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+
 }
 
 .fav-instrument .radio-button {
-  padding: 10px;
-  background-color: #f1f5f9;
-  border: 1px solid #3b82f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid lightgrey;
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
   position: relative;
   transition: background-color 0.3s ease;
-}
-
-.fav-instrument .radio-button.checked {
-  background-color: #3b82f6;
-  color: white;
+  width: 100%; /* Set a fixed width */
+  height: 100px; /* Set a fixed height */
 }
 
 .fav-instrument .radio-button .checkmark {
@@ -108,8 +126,21 @@ input:focus, select:focus {
   visibility: hidden;
 }
 
-.fav-instrument .radio-button.checked .checkmark {
-  visibility: visible;
+.radio-button {
+  text-align: center;
+  width: 100%;
+  height: 100px;
+}
+
+/* changing color when radiobutton is clicked */
+.radio-button.checked {
+  background-color: #8facda; /* Blue background when selected */
+}
+
+#guitar, 
+#piano,
+#drums {
+  justify-content: center;
 }
 
 /* Favorite Genre */
@@ -128,17 +159,20 @@ input:focus, select:focus {
 
 /* Submit Button */
 .submit-button {
-  width: 80%;
+  width: 100px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
   padding: 15px;
   font-size: 18px;
-  background-color: #3b82f6;
+  background-color: rgb(149, 160, 170);
   color: white;
   border-radius: 5px;
-  border: none;
+  border-width: 1px;
+  border-color: black;
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin: 0 auto;
-  display: block; /* Ensure centering */
 }
 
 .submit-button:hover {
@@ -149,13 +183,26 @@ input:focus, select:focus {
 @media (max-width: 768px) {
   .fav-instrument .radio-group {
     flex-direction: column;
+    gap: 10px;
   }
 
   .fav-instrument .radio-button {
     width: 100%;
+    height: auto;
+    padding: 15px;
   }
 
   .header {
     padding: 20px 30px; /* Reduce padding on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .form {
+    padding: 20px 20px; /* Reduce form padding for very small screens */
+  }
+
+  .submit-button {
+    padding: 12px; /* Adjust padding for smaller screens */
   }
 }
