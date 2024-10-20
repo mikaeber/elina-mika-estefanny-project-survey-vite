@@ -6,25 +6,15 @@
 
 # Survey Project
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
+we had to create a Typeform-like product in the form of a quiz using React and practicing react state and controlled forms
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+We had some issues with the header, as when making changes to the width, the changes were also reflected in the form, in the end we decided to leave the header attached to the top of the web page, which made the form stay behind the header once we scrolled. 
+
+Another problem with the header is that when pressing the submit button, the form response and the header appeared (which was not required) The solution was to create a useState(false) to prevent it from not appearing once submit was clicked.
+
+as Diego mentioned when talking about the useState, as long as the state is not change to true, the header is going to be rendered, but upon clicking submit, the state changes to true and the header is removed. 
 
 ### View it live
 
