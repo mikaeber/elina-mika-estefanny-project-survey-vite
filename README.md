@@ -10,6 +10,7 @@ we had to create a Typeform-like product in the form of a quiz using React and p
 
 ### The Problem
 
+
 We had some issues with the header, as when making changes to the width, the changes were also reflected in the form, in the end we decided to leave the header attached to the top of the web page, which made the form stay behind the header once we scrolled. 
 
 Another problem with the header is that when pressing the submit button, the form response and the header appeared (which was not required) The solution was to create a useState(false) to prevent it from not appearing once submit was clicked.
