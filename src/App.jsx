@@ -10,7 +10,6 @@ export const App = () => {
     artist: "",
     fav_instrument: "",
     fav_genre: "",
-    // TODO radio-button-question
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -18,7 +17,7 @@ export const App = () => {
   // function to save the answers to the questions in formData state when the form is submitted
   const handleSubmit = (event) => {
     event.preventDefault();
-    setSubmitted(true);
+    setSubmitted(true); // Update the state to indicate the form has been submitted
   };
 
   // function to handle when a user answers any of the questions
@@ -32,8 +31,10 @@ export const App = () => {
 
   return (
     <>
-      <Header className="header" />
-      {/* if form is submitted (submitted === true), then render the Results, otherwise show the form  */}
+      {/* Conditionally render the header */}
+      {!submitted && <Header className="header" />}  {/* Hide the header when submitted */}
+      
+      {/* if form is submitted (submitted === true), then render the Results, otherwise show the form */}
       {submitted ? (
         <Results
           artist={formData.artist}

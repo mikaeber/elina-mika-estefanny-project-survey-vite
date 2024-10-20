@@ -12,7 +12,7 @@ export const FavoriteArtist = ({ value, onChange }) => {
         value={value}
         required
       >
-        <option value="" selected disabled hidden>
+        <option value="selected disabled hidden">
           Please select
         </option>
         <option value="Madonna">Madonna</option>
