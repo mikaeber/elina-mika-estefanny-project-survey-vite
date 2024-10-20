@@ -4,11 +4,10 @@ export const FavoriteInstrument = ({ formData, handleChange }) => {
       <h2>1.</h2>
       <h3>Choose your favorite instrument</h3>
       <div className="radio-group">
-
-      {/* // Updated the label to dynamically apply the "checked" class when the user selects "Guitar".
+        {/* // Updated the label to dynamically apply the "checked" class when the user selects "Guitar".
       // This allows the background or other styles to change based on the selected option. */}
-      <label
-          className={`radio-button ${formData.fav_instrument === "Guitar" ? "checked" : ""}`} 
+        <label
+          className={`radio-button ${formData.fav_instrument === "Guitar" ? "checked" : ""}`}
           htmlFor="guitar"
         >
           <input
@@ -18,15 +17,16 @@ export const FavoriteInstrument = ({ formData, handleChange }) => {
             value="Guitar"
             checked={formData.fav_instrument === "Guitar"}
             onChange={handleChange}
+            required
           />
           Guitar
           <span className="checkmark"></span>
         </label>
 
-      {/* // Updated the label to dynamically apply the "checked" class when the user selects "Piano".
+        {/* // Updated the label to dynamically apply the "checked" class when the user selects "Piano".
       // This allows the background or other styles to change based on the selected option. */}
         <label
-          className={`radio-button ${formData.fav_instrument === "Piano" ? "checked" : ""}`} 
+          className={`radio-button ${formData.fav_instrument === "Piano" ? "checked" : ""}`}
           htmlFor="piano"
         >
           <input
@@ -36,15 +36,16 @@ export const FavoriteInstrument = ({ formData, handleChange }) => {
             value="Piano"
             checked={formData.fav_instrument === "Piano"}
             onChange={handleChange}
+            required
           />
           Piano
           <span className="checkmark"></span>
         </label>
 
-      {/* // Updated the label to dynamically apply the "checked" class when the user selects "Drums".
-      // This allows the background or other styles to change based on the selected option. */}       
+        {/* // Updated the label to dynamically apply the "checked" class when the user selects "Drums".
+      // This allows the background or other styles to change based on the selected option. */}
         <label
-          className={`radio-button ${formData.fav_instrument === "Drums" ? "checked" : ""}`} 
+          className={`radio-button ${formData.fav_instrument === "Drums" ? "checked" : ""}`}
           htmlFor="drums"
         >
           <input
@@ -54,6 +55,7 @@ export const FavoriteInstrument = ({ formData, handleChange }) => {
             value="Drums"
             checked={formData.fav_instrument === "Drums"}
             onChange={handleChange}
+            required
           />
           Drums
           <span className="checkmark"></span>

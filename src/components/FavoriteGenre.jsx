@@ -9,8 +9,8 @@ export const FavoriteGenre = ({ name, value, handleChange }) => {
         value={value}
         placeholder="Write your answer here"
         onChange={handleChange}
-        //  onChange={() => console.log("Input change")}
+        required
       />
-   </div>
+    </div>
   );
 };

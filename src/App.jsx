@@ -31,23 +31,23 @@ export const App = () => {
 
   return (
     <>
-      {/* Conditionally render the header */}
-      {!submitted && <Header className="header" />}  {/* Hide the header when submitted */}
-      
-      {/* if form is submitted (submitted === true), then render the Results, otherwise show the form */}
-      {submitted ? (
+      {/* if form isnt submitted (submitted === false), then render the form+header, otherwise show the results */}
+      {!submitted ? (
+        <>
+          <Header className="header" />
+          <Form
+            formData={formData}
+            handleSubmit={handleSubmit}
+            handleChange={handleChange}
+            className="form"
+          />
+        </>
+      ) : (
         <Results
           artist={formData.artist}
           fav_instrument={formData.fav_instrument}
           fav_genre={formData.fav_genre}
           className="results"
-        />
-      ) : (
-        <Form
-          formData={formData}
-          handleSubmit={handleSubmit}
-          handleChange={handleChange}
-          className="form"
         />
       )}
     </>
