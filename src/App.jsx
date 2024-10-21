@@ -5,7 +5,7 @@ import { Results } from "./components/Results";
 import "./App.css";
 
 export const App = () => {
-  // state to store all the answers to the questions in one state object, currently only artist (dropdown-select-question) but can be expanded to include other questions
+  // state to store all the answers to the questions in one state object
   const [formData, setFormData] = useState({
     artist: "",
     fav_instrument: "",
